@@ -1,0 +1,5 @@
+Objetivo
+
+Criar uma api para controle de produtos
+
+Produto: {id, nome, quantidade, valor, observacao}
