@@ -3,17 +3,19 @@ package com.backend.backend.services;
 import java.util.List;
 import java.util.Optional;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.backend.backend.model.Produto;
-import com.backend.backend.repository.ProdutoRepository;
+import com.backend.backend.repository.ProdutoRepository_old;
 
 @Service
 public class ProdutoService {
     //Gerando dependencia do repository.
+
     @Autowired // Anotation de inversão de dependencia.
-    private ProdutoRepository produtoRepository;
+    private ProdutoRepository_old produtoRepository;
 
     /**
      * Retorna todos os produtos

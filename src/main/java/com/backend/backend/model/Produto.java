@@ -1,6 +1,15 @@
 package com.backend.backend.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Produto {
+
+    @Id // indicando a propriedade ID.
+    @GeneratedValue(strategy = GenerationType.AUTO) // Indicando estrátegira incremental
     private Long id;
     
     private String nome;
