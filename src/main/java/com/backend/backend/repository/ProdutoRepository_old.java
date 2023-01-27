@@ -12,7 +12,7 @@ import com.backend.backend.model.exception.ResourceNotFoundException;
 @Repository
 public class ProdutoRepository_old {
     private List<Produto> produtos = new ArrayList<Produto>();
-    private Long ultimoId = (long) 0;
+    private Integer ultimoId;
 
     /**
      * Metodo para obter todos os produtos
@@ -28,7 +28,7 @@ public class ProdutoRepository_old {
      * @param id
      * @return
      */
-    public Optional<Produto> obterPorId(Long id) {
+    public Optional<Produto> obterPorId(Integer id) {
         return produtos.stream().filter(item -> item.getId() == id).findFirst();
     }
 
@@ -38,9 +38,6 @@ public class ProdutoRepository_old {
      * @return
      */
     public Produto adicionar(Produto produto) {
-        ultimoId++;
-
-        produto.setId(ultimoId);
         produtos.add(produto);
 
         return produto;
@@ -50,7 +47,7 @@ public class ProdutoRepository_old {
      * Metodo para deletar produto por id
      * @param id
      */
-    public void deletar(Long id) {
+    public void deletar(Integer id) {
         produtos.removeIf(filter -> filter.getId() == id);
     }
 

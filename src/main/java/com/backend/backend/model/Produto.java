@@ -1,16 +1,16 @@
 package com.backend.backend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Produto {
 
-    @Id // indicando a propriedade ID.
-    @GeneratedValue(strategy = GenerationType.AUTO) // Indicando estrátegira incremental
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     
     private String nome;
 
@@ -20,11 +20,11 @@ public class Produto {
 
     private String observacao;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -30,7 +30,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Produto> obterPorId(@PathVariable Long id) {
+    public Optional<Produto> obterPorId(@PathVariable Integer id) {
         return produtoService.obterPorId(id);
     }
 
@@ -40,14 +40,14 @@ public class ProdutoController {
     }
 
     @DeleteMapping("/{id}")
-    public String deletar(@PathVariable Long id) {
+    public String deletar(@PathVariable Integer id) {
         produtoService.deletar(id);
 
         return "Produto deletado com sucesso!";
     }
 
     @PutMapping("/{id}")
-    public Produto atualizar(@PathVariable Long id, @RequestBody Produto produto) {
+    public Produto atualizar(@PathVariable Integer id, @RequestBody Produto produto) {
         return produtoService.atualizar(id, produto);
     }
 }

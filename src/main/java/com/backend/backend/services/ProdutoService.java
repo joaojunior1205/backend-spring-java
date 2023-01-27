@@ -30,7 +30,7 @@ public class ProdutoService {
      * @param id
      * @return
      */
-    public Optional<Produto> obterPorId(Long id) {
+    public Optional<Produto> obterPorId(Integer id) {
         return produtoRepository.obterPorId(id);
     }
 
@@ -47,7 +47,7 @@ public class ProdutoService {
      * 
      * @param id
      */
-    public void deletar(Long id) {
+    public void deletar(Integer id) {
         produtoRepository.deletar(id);
     }
 
@@ -57,7 +57,7 @@ public class ProdutoService {
      * @param produto
      * @return
      */
-    public Produto atualizar(Long id, Produto produto) {
+    public Produto atualizar(Integer id, Produto produto) {
         produto.setId(id);
 
         return produtoRepository.atualizar(produto);
