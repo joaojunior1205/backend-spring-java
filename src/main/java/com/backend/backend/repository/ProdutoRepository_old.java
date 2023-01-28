@@ -12,7 +12,7 @@ import com.backend.backend.model.exception.ResourceNotFoundException;
 @Repository
 public class ProdutoRepository_old {
     private List<Produto> produtos = new ArrayList<Produto>();
-    private Integer ultimoId;
+    private Integer ultimoId = 0;
 
     /**
      * Metodo para obter todos os produtos
@@ -38,6 +38,9 @@ public class ProdutoRepository_old {
      * @return
      */
     public Produto adicionar(Produto produto) {
+        ultimoId++;
+
+        produto.setId(ultimoId);
         produtos.add(produto);
 
         return produto;
